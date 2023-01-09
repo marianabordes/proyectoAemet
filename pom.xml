@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Feeder</module>
+        <module>DatamartProvider</module>
     </modules>
 
     <properties>
