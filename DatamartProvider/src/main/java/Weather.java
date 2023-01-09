@@ -5,6 +5,10 @@ public class Weather {
     private String station;
     private float temp;
 
+
+    public Weather() {
+    }
+
     public Weather(String date, String time, String place, String station, float temp) {
         this.date = date;
         this.time = time;
