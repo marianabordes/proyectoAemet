@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="Weather  + WeatherDeserializer classes">
-      <change afterPath="$PROJECT_DIR$/Feeder/src/main/java/DataManager.java" afterDir="false" />
+    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="DataManager class">
+      <change afterPath="$PROJECT_DIR$/Feeder/src/main/java/FeederController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/WeatherDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/WeatherDeserializer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673264891818</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="DataManager class">
+      <created>1673265115013</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673265115013</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -94,6 +102,7 @@
     <MESSAGE value="Project creation" />
     <MESSAGE value="Feeder + DataExtractor class" />
     <MESSAGE value="Weather  + WeatherDeserializer classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Weather  + WeatherDeserializer classes" />
+    <MESSAGE value="DataManager class" />
+    <option name="LAST_COMMIT_MESSAGE" value="DataManager class" />
   </component>
 </project>
