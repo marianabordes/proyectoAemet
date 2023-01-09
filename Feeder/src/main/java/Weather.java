@@ -66,9 +66,7 @@ public class Weather {
         return airTempMin;
     }
 
-    public void setAirTempMin(float WeatherDeserializerairTempMin) {
-        this.airTempMin = airTempMin;
-    }
+    public void setAirTempMin(float airTempMin) { this.airTempMin = airTempMin; }
 
     public float getLongi() {
         return longi;
