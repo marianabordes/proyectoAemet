@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="Feeder Module Finished">
-      <change afterPath="$PROJECT_DIR$/DatamartProvider/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/DatamartConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datamart.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="DatamartConnection class (pending path review)">
+      <change afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/TableManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/Weather.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datalake/20230109.event" beforeDir="false" afterPath="$PROJECT_DIR$/datalake/20230109.event" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datamart.db" beforeDir="false" afterPath="$PROJECT_DIR$/datamart.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +53,6 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "jdk.selected.JAVA_MODULE": "19",
     "last_opened_file_path": "C:/Users/maria/Desktop/DACD/proyectoAemet/DatamartProvider/src/main/java",
     "project.structure.last.edited": "Modules",
@@ -72,6 +67,9 @@
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\maria\Desktop\DACD\proyectoAemet" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -118,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673266015202</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="DatamartConnection class (pending path review)">
+      <created>1673283398329</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673283398329</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -138,6 +143,7 @@
     <MESSAGE value="Weather  + WeatherDeserializer classes" />
     <MESSAGE value="DataManager class" />
     <MESSAGE value="FeederController class + WeatherDeserializer edit" />
-    <option name="LAST_COMMIT_MESSAGE" value="FeederController class + WeatherDeserializer edit" />
+    <MESSAGE value="DatamartConnection class (pending path review)" />
+    <option name="LAST_COMMIT_MESSAGE" value="DatamartConnection class (pending path review)" />
   </component>
 </project>
