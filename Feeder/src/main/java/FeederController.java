@@ -4,7 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class FeederController {
-    public void controller() throws IOException {
+    public void control() throws IOException {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
