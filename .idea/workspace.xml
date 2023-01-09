@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="TableManager class (create and insert methods) + POJO class Weather">
-      <change afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/WeatherDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/Weather.java" afterDir="false" />
+    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="WeatherDeserializer class">
+      <change afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/DatamartProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673289472782</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="WeatherDeserializer class">
+      <created>1673289951599</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673289951599</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,6 +156,7 @@
     <MESSAGE value="FeederController class + WeatherDeserializer edit" />
     <MESSAGE value="DatamartConnection class (pending path review)" />
     <MESSAGE value="TableManager class (create and insert methods) + POJO class Weather" />
-    <option name="LAST_COMMIT_MESSAGE" value="TableManager class (create and insert methods) + POJO class Weather" />
+    <MESSAGE value="WeatherDeserializer class" />
+    <option name="LAST_COMMIT_MESSAGE" value="WeatherDeserializer class" />
   </component>
 </project>
