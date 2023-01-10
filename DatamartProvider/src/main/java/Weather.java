@@ -3,19 +3,19 @@ public class Weather {
     private String time;
     private String place;
     private String station;
-    private float temp;
+    private double temp;
 
 
     public Weather() {
     }
 
-    public Weather(String date, String time, String place, String station, float temp) {
+    public Weather (String date, String time, String place, String station, double temp) {
         this.date = date;
         this.time = time;
         this.place = place;
         this.station = station;
         this.temp = temp;
-    }
+    } // Debería poner el constructor en la clase POJO si no se utiliza nunca?
 
     public String getDate() {
         return date;
@@ -49,11 +49,11 @@ public class Weather {
         this.station = station;
     }
 
-    public float getTemp() {
+    public double getTemp() {
         return temp;
     }
 
-    public void setTemp(float temp) {
+    public void setTemp(double temp) {
         this.temp = temp;
     }
 

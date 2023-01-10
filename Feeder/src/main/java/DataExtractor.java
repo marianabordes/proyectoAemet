@@ -27,7 +27,7 @@ public class DataExtractor {
     public static String getData(String datosUrl) throws IOException {
         String contenidoDatos = Jsoup.connect(datosUrl)
                 .validateTLSCertificates(false)
-                .timeout(10000)
+                .timeout(20000)
                 .ignoreContentType(true)
                 .header("accept", "application/json")
                 .method(Connection.Method.GET)
