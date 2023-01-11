@@ -25,9 +25,8 @@ public class DatamartProvider {
         DatamartConnection connection = new DatamartConnection();
         ArrayList<Weather> deserializedJson = WeatherDeserializer.jsonDeserializer(json);
         Weather highestTemp = TemperatureFilter.getHighestTemp(deserializedJson);
-        System.out.println(highestTemp);
-        tableManager.insertTempMax(highestTemp, connection);
         Weather lowestTemp = TemperatureFilter.getLowestTemp(deserializedJson);
+        tableManager.insertTempMax(highestTemp, connection);
         tableManager.insertTempMin(lowestTemp, connection);
     }
 }

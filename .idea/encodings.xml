@@ -5,6 +5,10 @@
     <file url="file://$PROJECT_DIR$/DatamartProvider/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Feeder/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Feeder/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TemperatureProvider/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TemperatureProvider/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TemperatureService/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/TemperatureService/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>

@@ -11,6 +11,7 @@
     <modules>
         <module>Feeder</module>
         <module>DatamartProvider</module>
+        <module>TemperatureProvider</module>
     </modules>
 
     <properties>

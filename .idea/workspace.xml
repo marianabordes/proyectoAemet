@@ -4,21 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="TemperatureFilter class + Controller provisional class + modifications">
-      <change afterPath="$PROJECT_DIR$/Feeder/src/main/java/DataExtractorProblem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Feeder/src/main/java/DataStorer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/datalake/20230111.event" afterDir="false" />
+    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="Feeder modifications: naming review + restructure of methods">
+      <change afterPath="$PROJECT_DIR$/TemperatureProvider/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/TemperatureProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/WeatherDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/WeatherDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/DataExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/DataExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/DataManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/DataManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/FeederController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/FeederController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/Weather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/WeatherDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/Deserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datalake/20230109.event" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datalake/20230110.event" beforeDir="false" afterPath="$PROJECT_DIR$/datalake/20230110.event" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/DatamartProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/DatamartProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/TableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/TableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/TemperatureFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/TemperatureFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/DataExtractorProblem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datalake/20230111.event" beforeDir="false" afterPath="$PROJECT_DIR$/datalake/20230111.event" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datamart.db" beforeDir="false" afterPath="$PROJECT_DIR$/datamart.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "19",
-    "last_opened_file_path": "C:/Users/maria/Desktop/DACD/publisher-subscriber",
+    "last_opened_file_path": "C:/Users/maria/Desktop/DACD/rest-api",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -85,7 +87,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Feeder">
+  <component name="RunManager" selected="Application.TemperatureProvider">
     <configuration name="Controller" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Controller" />
       <module name="DatamartProvider" />
@@ -100,14 +102,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TemperatureProvider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TemperatureProvider" />
+      <module name="TemperatureProvider" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.TemperatureProvider" />
       <item itemvalue="Application.Controller" />
       <item itemvalue="Application.Feeder" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Feeder" />
+        <item itemvalue="Application.TemperatureProvider" />
         <item itemvalue="Application.Controller" />
+        <item itemvalue="Application.Feeder" />
       </list>
     </recent_temporary>
   </component>
@@ -190,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673386556414</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Feeder modifications: naming review + restructure of methods">
+      <created>1673441853392</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673441853392</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -216,6 +234,19 @@
     <MESSAGE value="WeatherDeserializer class" />
     <MESSAGE value="DatamartProvider class draft (acquires json from a specific datalake event)" />
     <MESSAGE value="TemperatureFilter class + Controller provisional class + modifications" />
-    <option name="LAST_COMMIT_MESSAGE" value="TemperatureFilter class + Controller provisional class + modifications" />
+    <MESSAGE value="Feeder modifications: naming review + restructure of methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Feeder modifications: naming review + restructure of methods" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/TemperatureProvider/src/main/java/TemperatureProvider.java</url>
+          <line>9</line>
+          <properties field="weathers" class="TemperatureProvider" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

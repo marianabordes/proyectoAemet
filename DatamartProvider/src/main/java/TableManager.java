@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.sql.*;
 
 public class TableManager {
@@ -22,8 +23,7 @@ public class TableManager {
                 	temp String
                 );""";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + path);
-             Statement stmt = conn.createStatement()) {
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + path); Statement stmt = conn.createStatement()) {
             stmt.execute(sqlTempMax);
             stmt.execute(sqlTempMin);
         } catch (SQLException e) {
@@ -33,7 +33,7 @@ public class TableManager {
 
     public void insertTempMax(Weather weatherWithMaxTemp, DatamartConnection connection) throws SQLException {
 
-        String sql = "INSERT or IGNORE INTO tempMax(date, time, place, station, temp) VALUES(?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO tempMax(date, time, place, station, temp) VALUES(?, ?, ?, ?, ?)";
 
         try (PreparedStatement pstmt = connection.getConnection().prepareStatement(sql)) {
             pstmt.setString(1, weatherWithMaxTemp.getDate());
@@ -48,7 +48,6 @@ public class TableManager {
     public void insertTempMin(Weather weatherWithMinTemp, DatamartConnection connection) {
 
         String sql = "INSERT or IGNORE INTO tempMin(date, time, place, station, temp) VALUES(?, ?, ?, ?, ?)";
-
         try (PreparedStatement pstmt = connection.getConnection().prepareStatement(sql)) {
             pstmt.setString(1, weatherWithMinTemp.getDate());
             pstmt.setString(2, weatherWithMinTemp.getTime());
