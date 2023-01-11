@@ -1,4 +1,4 @@
-import com.google.gson.Gson;
+/*import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
@@ -19,7 +19,8 @@ public class DataExtractor {
                 .method(Connection.Method.GET)
                 .maxBodySize(0).execute().body();
         JsonObject jsonObject = new Gson().fromJson(jsonResponse, JsonObject.class);
-        return jsonObject.get("datos").getAsString();
+        String datosUrl = jsonObject.get("datos").getAsString();
+        return datosUrl;
     }
 
     public static String getData(String datosUrl) throws IOException {
@@ -33,3 +34,4 @@ public class DataExtractor {
         return dataContent;
     }
 }
+*/

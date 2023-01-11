@@ -14,10 +14,8 @@ public class WeatherDeserializer {
         weather.setTime(weatherJsonObject.getAsJsonObject().get("timestamp").getAsString().substring(11));
         weather.setStation(weatherJsonObject.getAsJsonObject().get("station").getAsString());
         weather.setPlace(weatherJsonObject.getAsJsonObject().get("place").getAsString());
-        try {
+        if (weatherJsonObject.getAsJsonObject().get("airTemperature").getAsDouble() != 0) {
             weather.setTemp(weatherJsonObject.getAsJsonObject().get("airTemperature").getAsDouble());
-        } catch (Exception e) {
-            System.out.println("value not found");
         }
         return weather;
     }

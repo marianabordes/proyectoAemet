@@ -2,55 +2,28 @@ import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class DataManager {
 
-    public List<Weather> filterData(String json) {
+    public static ArrayList<Weather> deserializeJson(String json) {
 
-        ArrayList<Weather> weathersNotFiltered = new ArrayList<>();
+        ArrayList<Weather> deserializedWeathers = new ArrayList<>();
         JsonArray events = new Gson().fromJson(json, JsonArray.class);
         for (JsonElement event : events) {
-            WeatherDeserializer deserializer = new WeatherDeserializer();
+            Deserializer deserializer = new Deserializer();
             Weather weather = deserializer.getWeather(event);
-            weathersNotFiltered.add(weather);
+            deserializedWeathers.add(weather);
         }
-
-        List<Weather> weathers = weathersNotFiltered.stream()
-                .filter(w -> w.getLat() > 27.5 && w.getLat() < 28.4 && w.getLongi() > -16 && w.getLongi() < -15)
-                .collect(Collectors.toList());
-        return weathers;
+        return deserializedWeathers;
     }
 
-    public void storeData(List<Weather> weathers) throws IOException {
-
-        File archivo = null;
-        FileWriter fileWriter = null;
-        String fileName = null;
-        ArrayList<Weather> weatherToday = new ArrayList<>();
-
-        for (Weather weather : weathers) {
-            String weatherDate = weather.getTimestamp().substring(0,10);
-
-            if (weatherDate.equals(LocalDate.now().toString())){
-                fileName = weatherDate.replace("-", "");
-                weatherToday.add(weather);
-            }
-        }
-
-        try{
-            archivo = new File("datalake\\" + fileName + ".event");
-            fileWriter = new FileWriter(archivo);
-            fileWriter.write(new Gson().toJson(weatherToday));
-            fileWriter.close();
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
+    public static List<Weather> getWeathersGC(ArrayList<Weather> deserializedWeathers) {
+        List<Weather> weathersFromGC = deserializedWeathers.stream()
+                .filter(w -> w.getLat() > 27.5 && w.getLat() < 28.4 && w.getLongi() > -16 && w.getLongi() < -15)
+                .collect(Collectors.toList());
+        return weathersFromGC;
     }
 }
