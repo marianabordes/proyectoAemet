@@ -7,8 +7,8 @@ import java.util.List;
 
 public class DatamartReader {
 
-    private Connection connect() {
-        String url = "jdbc:sqlite:C:\\Users\\maria\\Desktop\\DACD\\proyectoAemet\\datamart.db";
+    private Connection connect(String path) {
+        String url = "jdbc:sqlite:" + path;
         Connection conn = null;
         try {
             conn = DriverManager.getConnection(url);
@@ -18,11 +18,11 @@ public class DatamartReader {
         return conn;
     }
 
-    public List<Weather> selectWeathersInRangeMaxTemp(String date1, String date2){
+    public List<Weather> selectWeathersInRangeMaxTemp(String date1, String date2, String path){
         String sql = "SELECT date, place, temp FROM tempMax";
         List<Weather> weathers = new ArrayList<>();
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.connect(path);
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
             while (rs.next()) {
@@ -34,11 +34,11 @@ public class DatamartReader {
         return weathers;
     }
 
-    public List<Weather> selectWeathersInRangeMinTemp(String date1, String date2){
+    public List<Weather> selectWeathersInRangeMinTemp(String date1, String date2, String path){
         String sql = "SELECT date, place, temp FROM tempMin";
         List<Weather> weathers = new ArrayList<>();
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.connect(path);
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
             while (rs.next()) {
