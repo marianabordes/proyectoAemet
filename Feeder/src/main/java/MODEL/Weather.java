@@ -1,3 +1,5 @@
+package MODEL;
+
 public class Weather {
     private String timestamp;
     private String station;
@@ -11,17 +13,6 @@ public class Weather {
     public Weather() {
     }
 
-    public Weather(String timestamp, String station, String place, float airTemperature, float airTempMax, float airTempMin, float longi, float lat) {
-        this.timestamp = timestamp;
-        this.station = station;
-        this.place = place;
-        this.airTemperature = airTemperature;
-        this.airTempMax = airTempMax;
-        this.airTempMin = airTempMin;
-        this.longi = longi;
-        this.lat = lat;
-    }
-
     public String getTimestamp() {
         return timestamp;
     }
@@ -30,40 +21,20 @@ public class Weather {
         this.timestamp = timestamp;
     }
 
-    public String getStation() {
-        return station;
-    }
-
     public void setStation(String station) {
         this.station = station;
-    }
-
-    public String getPlace() {
-        return place;
     }
 
     public void setPlace(String place) {
         this.place = place;
     }
 
-    public float getAirTemperature() {
-        return airTemperature;
-    }
-
     public void setAirTemperature(float airTemperature) {
         this.airTemperature = airTemperature;
     }
 
-    public float getAirTempMax() {
-        return airTempMax;
-    }
-
     public void setAirTempMax(float airTempMax) {
         this.airTempMax = airTempMax;
-    }
-
-    public float getAirTempMin() {
-        return airTempMin;
     }
 
     public void setAirTempMin(float airTempMin) {
@@ -88,7 +59,7 @@ public class Weather {
 
     @Override
     public String toString() {
-        return "Weather{" +
+        return "MODEL.Weather{" +
                 "timestamp='" + timestamp + '\'' +
                 ", station='" + station + '\'' +
                 ", place='" + place + '\'' +

@@ -12,6 +12,7 @@ public class DatamartConnection {
     }
 
     public static Connection connect() {
+
         Connection connection = null;
         try {
             String path = "C:\\Users\\maria\\Desktop\\DACD\\proyectoAemet\\datamart.db";    // hacer con la ruta relativa o pasar la ruta como arg de la app

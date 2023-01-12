@@ -1,3 +1,5 @@
+package MODEL;
+
 import com.google.gson.JsonElement;
 
 
@@ -17,7 +19,6 @@ public class Deserializer {
         }
         weather.setLongi(weatherJsonObject.getAsJsonObject().get("lon").getAsFloat());
         weather.setLat(weatherJsonObject.getAsJsonObject().get("lat").getAsFloat());
-
         return weather;
     }
 }
