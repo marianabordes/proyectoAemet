@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.sql.*;
 
 public class TableManager {
@@ -7,7 +6,7 @@ public class TableManager {
 
         String sqlTempMax = """
                 CREATE TABLE IF NOT EXISTS tempMax (
-                	date String,
+                	date String PRIMARY KEY,
                 	time String,
                 	place String,
                 	station String,
@@ -16,7 +15,7 @@ public class TableManager {
 
         String sqlTempMin = """
                 CREATE TABLE IF NOT EXISTS tempMin (
-                	date String,
+                	date String PRIMARY KEY,
                 	time String,
                 	place String,
                 	station String,

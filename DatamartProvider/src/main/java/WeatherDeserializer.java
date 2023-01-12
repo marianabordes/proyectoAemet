@@ -16,7 +16,7 @@ public class WeatherDeserializer {
         weather.setPlace(weatherJsonObject.getAsJsonObject().get("place").getAsString());
         if (weatherJsonObject.getAsJsonObject().get("airTemperature").getAsDouble() != 0) {
             weather.setTemp(weatherJsonObject.getAsJsonObject().get("airTemperature").getAsDouble());
-        }
+        } else {return null;}
         return weather;
     }
 
@@ -25,7 +25,8 @@ public class WeatherDeserializer {
         ArrayList<Weather> jsonElements = new ArrayList<>();
         for (JsonElement element : jsonArray) {
             Weather weatherInJson = getWeather(element);
-            jsonElements.add(weatherInJson);
+            if (weatherInJson != null)
+                jsonElements.add(weatherInJson);
         }
         return jsonElements;
     }
