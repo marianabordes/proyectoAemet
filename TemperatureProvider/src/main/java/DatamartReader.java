@@ -18,11 +18,11 @@ public class DatamartReader {
         return conn;
     }
 
-    public List<Weather> selectWeathersInRangeMaxTemp(String date1, String date2, String path){
+    public List<Weather> selectWeathersInRangeMaxTemp(String date1, String date2){
         String sql = "SELECT date, place, temp FROM tempMax";
         List<Weather> weathers = new ArrayList<>();
 
-        try (Connection conn = this.connect(path);
+        try (Connection conn = this.connect("\\datamart.db");
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
             while (rs.next()) {
@@ -34,11 +34,11 @@ public class DatamartReader {
         return weathers;
     }
 
-    public List<Weather> selectWeathersInRangeMinTemp(String date1, String date2, String path){
+    public List<Weather> selectWeathersInRangeMinTemp(String date1, String date2){
         String sql = "SELECT date, place, temp FROM tempMin";
         List<Weather> weathers = new ArrayList<>();
 
-        try (Connection conn = this.connect(path);
+        try (Connection conn = this.connect("\\datamart.db");
              Statement stmt  = conn.createStatement();
              ResultSet rs    = stmt.executeQuery(sql)){
             while (rs.next()) {

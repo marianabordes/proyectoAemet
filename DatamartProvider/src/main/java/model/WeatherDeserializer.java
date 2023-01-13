@@ -23,10 +23,9 @@ public class WeatherDeserializer {
         return weather;
     }
 
-    public static ArrayList<Weather> jsonDeserializer(String json) {
-        JsonArray jsonArray = new Gson().fromJson(json, JsonArray.class);
+    public static ArrayList<Weather> jsonDeserializer(ArrayList<JsonObject> information) {
         ArrayList<Weather> jsonElements = new ArrayList<>();
-        for (JsonElement element : jsonArray) {
+        for (JsonElement element : information) {
             Weather weatherInJson = getWeather(element);
             if (weatherInJson != null)
                 jsonElements.add(weatherInJson);

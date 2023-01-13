@@ -1,5 +1,7 @@
 package controller;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import model.*;
 import view.*;
 
@@ -19,19 +21,16 @@ public class Controller {
                 try {
                     DatamartConnection.connect();
                     TableManager.createTable();
-                    ArrayList<String> information = DatamartProvider.getInformation(new File("datalake\\")); // por que´no se ejecuta con pathDatalake
-                    ArrayList<String> strings = DatamartProvider.setinfo(information);
-                    for (String informationOfDay : strings) {
-                        WeatherDeserializer.jsonDeserializer(informationOfDay);
-                    }
-                } catch (Exception  e) {
+                    ArrayList<JsonObject> information = DatamartProvider.getInformation(); // por que´no se ejecuta con pathDatalake
+                    DatamartProvider.setInformation(information);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
                 System.out.println("ejecutado correctamente");
-
             }
         };
-        timer.scheduleAtFixedRate(task, 0, 3600000);
+        timer.scheduleAtFixedRate(task, /*60000,*/ 0,  3600000);
     }
 }
-

@@ -25,6 +25,7 @@ public class DataStorer {
         fileWriter.close();
     }
 
+
     public String getFileName(List<Weather> weathersToday) {
         fileName = weathersToday.get(0).getTimestamp().substring(0, 10).replace("-", "");
         return fileName;

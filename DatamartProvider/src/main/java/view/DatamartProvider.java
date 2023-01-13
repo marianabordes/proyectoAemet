@@ -1,51 +1,42 @@
 package view;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
 import model.*;
 
 import java.io.*;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class DatamartProvider {
 
-    public static ArrayList<String> getInformation(File path) throws FileNotFoundException {
-        // este método necesita el path para funcionar
-        //File file = new File(pathDatalake);
-        File[] listFiles = path.listFiles();
-        ArrayList<String> jsons = new ArrayList<>();
-        assert listFiles != null;
-        for (File fileInLIst : listFiles) {
-            Scanner myReader = new Scanner(fileInLIst);
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                jsons.add(data);
-            }
+    public static ArrayList<JsonObject> getInformation() throws FileNotFoundException {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYYMMDD");
+        String fileName = formatter.format(LocalDate.now()) + ".event";
+        File file = new File(".\\datalake\\" + fileName);
+        ArrayList<JsonObject> jsons = new ArrayList<>();
+        Scanner myReader = new Scanner(file);
+        while (myReader.hasNextLine()) {
+            String data = myReader.nextLine();
+            JsonObject dataJsonObject = new Gson().fromJson(data, JsonObject.class);
+            jsons.add(dataJsonObject);
         }
-        return jsons; //cada item de jsons equivale a la información de un fichero
+        System.out.println(jsons);
+        return jsons;
     }
 
-    public static void setInformation(String json, String pathDatamart) throws SQLException {
+    public static void setInformation(ArrayList<JsonObject> information) throws SQLException {
         TableManager tableManager = new TableManager();
         DatamartConnection connection = new DatamartConnection();
-        ArrayList<Weather> deserializedJson = WeatherDeserializer.jsonDeserializer(json);
+        ArrayList<Weather> deserializedJson = WeatherDeserializer.jsonDeserializer(information);
         Weather highestTemp = TemperatureFilter.getHighestTemp(deserializedJson);
         Weather lowestTemp = TemperatureFilter.getLowestTemp(deserializedJson);
         tableManager.insertTempMax(highestTemp, connection);
         tableManager.insertTempMin(lowestTemp, connection);
-    }
-
-    public static ArrayList<String> setinfo(ArrayList<String> json) {
-        //String[] strings = json.toArray(new String[0]);
-        ArrayList<String> strings = new ArrayList<>();
-        for (String item : json){
-            strings.add(Arrays.toString(item.split("\n")));
-        }
-        System.out.println(strings);
-        //String[] strings =  json.split("\n");
-       // System.out.println(strings);
-        return strings;
     }
 }
 // "C:\\Users\\maria\\Desktop\\DACD\\proyectoAemet\\datalake"
