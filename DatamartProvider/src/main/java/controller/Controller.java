@@ -11,7 +11,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Controller {
-    public void control(String pathDatamart, String pathDatalake) {
+    public void control() {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
@@ -19,16 +19,19 @@ public class Controller {
                 try {
                     DatamartConnection.connect();
                     TableManager.createTable();
-                    ArrayList<String> information = DatamartProvider.getInformation(new File("C:\\Users\\maria\\Desktop\\DACD\\proyectoAemet\\datalake")); // por que´no se ejecuta con pathDatalake
-                    for (String json : information) {
-                        DatamartProvider.setInformation(json, pathDatamart);
+                    ArrayList<String> information = DatamartProvider.getInformation(new File("datalake\\")); // por que´no se ejecuta con pathDatalake
+                    ArrayList<String> strings = DatamartProvider.setinfo(information);
+                    for (String informationOfDay : strings) {
+                        WeatherDeserializer.jsonDeserializer(informationOfDay);
                     }
-                } catch (IOException | SQLException e) {
+                } catch (Exception  e) {
                     throw new RuntimeException(e);
                 }
                 System.out.println("ejecutado correctamente");
+
             }
         };
         timer.scheduleAtFixedRate(task, 0, 3600000);
     }
 }
+

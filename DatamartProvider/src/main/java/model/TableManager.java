@@ -4,8 +4,6 @@ import java.sql.*;
 
 public class TableManager {
     public static void createTable() {
-        String path = "C:\\Users\\maria\\Desktop\\DACD\\proyectoAemet\\datamart.db";
-
         String sqlTempMax = """
                 CREATE TABLE IF NOT EXISTS tempMax (
                 	date String PRIMARY KEY,
@@ -24,9 +22,10 @@ public class TableManager {
                 	temp String
                 );""";
 
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + path); Statement stmt = conn.createStatement()) {
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:datamart.db"); Statement stmt = conn.createStatement()) {
             stmt.execute(sqlTempMax);
             stmt.execute(sqlTempMin);
+            System.out.println("Tables created succesfully");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

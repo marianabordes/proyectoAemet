@@ -5,6 +5,7 @@ import model.*;
 import java.io.*;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DatamartProvider {
@@ -22,7 +23,7 @@ public class DatamartProvider {
                 jsons.add(data);
             }
         }
-        return jsons;
+        return jsons; //cada item de jsons equivale a la información de un fichero
     }
 
     public static void setInformation(String json, String pathDatamart) throws SQLException {
@@ -33,6 +34,18 @@ public class DatamartProvider {
         Weather lowestTemp = TemperatureFilter.getLowestTemp(deserializedJson);
         tableManager.insertTempMax(highestTemp, connection);
         tableManager.insertTempMin(lowestTemp, connection);
+    }
+
+    public static ArrayList<String> setinfo(ArrayList<String> json) {
+        //String[] strings = json.toArray(new String[0]);
+        ArrayList<String> strings = new ArrayList<>();
+        for (String item : json){
+            strings.add(Arrays.toString(item.split("\n")));
+        }
+        System.out.println(strings);
+        //String[] strings =  json.split("\n");
+       // System.out.println(strings);
+        return strings;
     }
 }
 // "C:\\Users\\maria\\Desktop\\DACD\\proyectoAemet\\datalake"

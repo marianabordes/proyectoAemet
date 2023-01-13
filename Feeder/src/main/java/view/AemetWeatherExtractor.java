@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AemetWeatherExtractor /*implements WeatherExtractor*/ {
+public class AemetWeatherExtractor {
 
     public List<Weather> getAemetWeathers() throws IOException {
         String dataUrl = "https://opendata.aemet.es/opendata/api/observacion/convencional/todas";

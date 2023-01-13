@@ -1,4 +1,6 @@
 package controller;
+import model.WeatherException;
+import model.WeathersGcTodaySelection;
 import view.AemetWeatherExtractor;
 import view.DataStorer;
 
@@ -16,12 +18,13 @@ public class FeederController {
                 try {
                     AemetWeatherExtractor weatherExtractor = new AemetWeatherExtractor();
                     DataStorer dataStorer = new DataStorer();
+                    WeathersGcTodaySelection selection = new WeathersGcTodaySelection();
                     List<model.Weather> deserializedWeathers = weatherExtractor.getAemetWeathers();
-                    List<model.Weather> weathersToday = dataStorer.getWeathersFromGcToday(deserializedWeathers); // variable fileName ???
+                    List<model.Weather> weathersToday = selection.getWeathersFromGcToday(deserializedWeathers); // variable fileName ???
                     dataStorer.storeData(weathersToday);
                 } catch (IOException e) {
-                    //String msg = "RunTimeException";
-                    //throw new WeatherException("msg");
+                    /*String msg = "RunTimeException";
+                    throw new WeatherException("msg");*/
                 }
                 System.out.println("ejecutado correctamente");
             }

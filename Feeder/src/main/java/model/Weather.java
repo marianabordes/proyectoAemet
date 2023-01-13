@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class Weather {
     private String timestamp;
     private String station;
@@ -69,5 +71,17 @@ public class Weather {
                 ", longi=" + longi +
                 ", lat=" + lat +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if(object instanceof Weather weather) {
+            return Objects.equals(this.station, weather.station) && Objects.equals(this.timestamp, weather.timestamp);
+        }
+        return false;
+    }
+    @Override
+    public int hashCode() {
+        return this.station.hashCode() + this.timestamp.hashCode();
     }
 }
