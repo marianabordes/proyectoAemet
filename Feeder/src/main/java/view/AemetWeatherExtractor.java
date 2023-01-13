@@ -8,22 +8,22 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AemetWeatherExtractor {
 
-    public List<Weather> getAemetWeathers() throws IOException {
+    public List<Weather> getAemetWeathers(String apiKey) throws IOException {
         String dataUrl = "https://opendata.aemet.es/opendata/api/observacion/convencional/todas";
-        String apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpYW5hLmJvcmRlczEwMUBhbHUudWxwZ2MuZXMiLCJqdGkiOiIwYjE1YmU1OC0zNGQ2LTQxZGMtYmMwMS00OWI4NmU0ZjFmOTciLCJpc3MiOiJBRU1FVCIsImlhdCI6MTY3MjI0MzM3OSwidXNlcklkIjoiMGIxNWJlNTgtMzRkNi00MWRjLWJjMDEtNDliODZlNGYxZjk3Iiwicm9sZSI6IiJ9.IJ-zH2SJWP5xcOsjVWLJ9hQ15zhfuscrpXaaDf3qJFk";
-
+       // String apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpYW5hLmJvcmRlczEwMUBhbHUudWxwZ2MuZXMiLCJqdGkiOiIwYjE1YmU1OC0zNGQ2LTQxZGMtYmMwMS00OWI4NmU0ZjFmOTciLCJpc3MiOiJBRU1FVCIsImlhdCI6MTY3MjI0MzM3OSwidXNlcklkIjoiMGIxNWJlNTgtMzRkNi00MWRjLWJjMDEtNDliODZlNGYxZjk3Iiwicm9sZSI6IiJ9.IJ-zH2SJWP5xcOsjVWLJ9hQ15zhfuscrpXaaDf3qJFk";
         String datosUrl = getDataUrls(dataUrl, apiKey);
         String dataContent = getData(datosUrl);
         return deserializeJson(dataContent); // returns deserialized weathers
     }
 
-    public String getDataUrls(String dataUrl, String apiKey) throws IOException {
+    private String getDataUrls(String dataUrl, String apiKey) throws IOException {
         String jsonResponse = Jsoup.connect(dataUrl)
                 .validateTLSCertificates(false)
                 .timeout(10000)
@@ -36,7 +36,7 @@ public class AemetWeatherExtractor {
         return jsonObject.get("datos").getAsString();
     }
 
-    public String getData(String datosUrl) throws IOException {
+    private String getData(String datosUrl) throws IOException {
         return Jsoup.connect(datosUrl)
                 .validateTLSCertificates(false)
                 .timeout(20000)
@@ -46,7 +46,7 @@ public class AemetWeatherExtractor {
                 .maxBodySize(0).execute().body();
     }
 
-    public List<Weather> deserializeJson(String json) {
+    private List<Weather> deserializeJson(String json) {
         ArrayList<Weather> deserializedWeathers = new ArrayList<>();
         JsonArray events = new Gson().fromJson(json, JsonArray.class);
         for (JsonElement event : events) {

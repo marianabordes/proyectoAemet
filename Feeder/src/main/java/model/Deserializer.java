@@ -5,9 +5,7 @@ import com.google.gson.JsonElement;
 
 public class Deserializer {
     public Weather getWeather(JsonElement weatherJsonObject) {
-
         Weather weather = new Weather();
-
         weather.setTimestamp(weatherJsonObject.getAsJsonObject().get("fint").getAsString());
         weather.setStation(weatherJsonObject.getAsJsonObject().get("idema").getAsString());
         weather.setPlace(weatherJsonObject.getAsJsonObject().get("ubi").getAsString());

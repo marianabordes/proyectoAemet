@@ -1,11 +1,11 @@
 package view;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import model.*;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -14,29 +14,26 @@ import java.util.Scanner;
 
 public class DatamartProvider {
 
-    public static ArrayList<JsonObject> getInformation() throws FileNotFoundException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("YYYYMMDD");
+    public ArrayList<Weather> getWeathersFromDatalake() throws FileNotFoundException {
+        WeatherDeserializer deserializer = new WeatherDeserializer();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         String fileName = formatter.format(LocalDate.now()) + ".event";
         File file = new File(".\\datalake\\" + fileName);
-        ArrayList<JsonObject> jsons = new ArrayList<>();
+        ArrayList<JsonObject> jsonsInDatalake = new ArrayList<>();
         Scanner myReader = new Scanner(file);
         while (myReader.hasNextLine()) {
             String data = myReader.nextLine();
             JsonObject dataJsonObject = new Gson().fromJson(data, JsonObject.class);
-            jsons.add(dataJsonObject);
+            jsonsInDatalake.add(dataJsonObject);
         }
-        System.out.println(jsons);
-        return jsons;
+        return deserializer.jsonDeserializer(jsonsInDatalake);
     }
 
-    public static void setInformation(ArrayList<JsonObject> information) throws SQLException {
-        TableManager tableManager = new TableManager();
-        DatamartConnection connection = new DatamartConnection();
-        ArrayList<Weather> deserializedJson = WeatherDeserializer.jsonDeserializer(information);
-        Weather highestTemp = TemperatureFilter.getHighestTemp(deserializedJson);
-        Weather lowestTemp = TemperatureFilter.getLowestTemp(deserializedJson);
+    public void setFilteredWeathersInDatamart(ArrayList<Weather> jsonsFromDatalake, TableManager tableManager, DatamartConnection connection) throws SQLException {
+        TemperatureFilter filter = new TemperatureFilter();
+        Weather highestTemp = filter.getHighestTemp(jsonsFromDatalake);
+        Weather lowestTemp = filter.getLowestTemp(jsonsFromDatalake);
         tableManager.insertTempMax(highestTemp, connection);
         tableManager.insertTempMin(lowestTemp, connection);
     }
 }
-// "C:\\Users\\maria\\Desktop\\DACD\\proyectoAemet\\datalake"

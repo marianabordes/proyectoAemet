@@ -1,35 +1,33 @@
 package model;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
+
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 
 public class WeatherDeserializer {
+    public ArrayList<Weather> jsonDeserializer(ArrayList<JsonObject> jsons) {
+        ArrayList<Weather> jsonElements = new ArrayList<>();
+        for (JsonElement json : jsons) {
+            Weather weatherInJson = getWeather(json);
+            if (weatherInJson != null)
+                jsonElements.add(weatherInJson);
+        }
+        return jsonElements;
+    }
 
-    public static Weather getWeather(JsonElement weatherJsonObject) {
-
+    private Weather getWeather(JsonElement weatherJsonObject) {
         Weather weather = new Weather();
-
         weather.setDate(weatherJsonObject.getAsJsonObject().get("timestamp").getAsString().substring(0, 10));
         weather.setTime(weatherJsonObject.getAsJsonObject().get("timestamp").getAsString().substring(11));
         weather.setStation(weatherJsonObject.getAsJsonObject().get("station").getAsString());
         weather.setPlace(weatherJsonObject.getAsJsonObject().get("place").getAsString());
         if (weatherJsonObject.getAsJsonObject().get("airTemperature").getAsDouble() != 0) {
             weather.setTemp(weatherJsonObject.getAsJsonObject().get("airTemperature").getAsDouble());
-        } else {return null;}
-        return weather;
-    }
-
-    public static ArrayList<Weather> jsonDeserializer(ArrayList<JsonObject> information) {
-        ArrayList<Weather> jsonElements = new ArrayList<>();
-        for (JsonElement element : information) {
-            Weather weatherInJson = getWeather(element);
-            if (weatherInJson != null)
-                jsonElements.add(weatherInJson);
+        } else {
+            return null;
         }
-        return jsonElements;
+        return weather;
     }
 }

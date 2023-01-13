@@ -1,6 +1,8 @@
 package model;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DatamartConnection {
     private final Connection connection;
@@ -13,7 +15,7 @@ public class DatamartConnection {
         return connection;
     }
 
-    public static Connection connect() {
+    public Connection connect() {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection("jdbc:sqlite:" + "datamart.db");

@@ -75,11 +75,12 @@ public class Weather {
 
     @Override
     public boolean equals(Object object) {
-        if(object instanceof Weather weather) {
+        if (object instanceof Weather weather) {
             return Objects.equals(this.station, weather.station) && Objects.equals(this.timestamp, weather.timestamp);
         }
         return false;
     }
+
     @Override
     public int hashCode() {
         return this.station.hashCode() + this.timestamp.hashCode();

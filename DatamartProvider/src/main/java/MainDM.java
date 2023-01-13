@@ -1,8 +1,8 @@
-import controller.Controller;
+import controller.DatamartProviderController;
 
 public class MainDM {
     public static void main(String[] args) {
-        Controller controller = new Controller();
+        DatamartProviderController controller = new DatamartProviderController();
         controller.control();
     }
 }

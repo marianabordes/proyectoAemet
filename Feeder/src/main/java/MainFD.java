@@ -1,9 +1,9 @@
 import controller.FeederController;
-import model.WeatherException;
 
 public class MainFD {
-    public static void main(String[] args) throws WeatherException {
+    public static void main(String[] args) {
         FeederController controller = new FeederController();
-        controller.control();
+        String apiKey = args[0];
+        controller.control(apiKey);
     }
 }

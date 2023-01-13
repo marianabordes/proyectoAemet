@@ -3,7 +3,7 @@ package model;
 import java.sql.*;
 
 public class TableManager {
-    public static void createTable() {
+    public void createTable() {
         String sqlTempMax = """
                 CREATE TABLE IF NOT EXISTS tempMax (
                 	date String PRIMARY KEY,
@@ -33,12 +33,6 @@ public class TableManager {
 
     public void insertTempMax(Weather weatherWithMaxTemp, DatamartConnection connection) throws SQLException {
 
-        /*connection.getConnection().createStatement().execute(String.format(
-                "DELETE FROM %s WHERE date = %s",
-                    "tempMax",
-                    "2023-01-11"
-            ));
-*/
         String sql = "INSERT or REPLACE INTO tempMax(date, time, place, station, temp) VALUES(?, ?, ?, ?, ?)";
 
         try (PreparedStatement pstmt = connection.getConnection().prepareStatement(sql)) {
@@ -52,12 +46,6 @@ public class TableManager {
     }
 
     public void insertTempMin(Weather weatherWithMinTemp, DatamartConnection connection) throws SQLException {
-
-       /* connection.getConnection().createStatement().execute(String.format(
-                "DELETE FROM %s WHERE date = %s",
-                "tempMin",
-                "2023-01-11"
-        ));*/
 
         String sql = "INSERT or REPLACE INTO tempMin(date, time, place, station, temp) VALUES(?, ?, ?, ?, ?)";
         try (PreparedStatement pstmt = connection.getConnection().prepareStatement(sql)) {

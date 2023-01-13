@@ -1,5 +1,5 @@
 package controller;
-import model.WeatherException;
+
 import model.WeathersGcTodaySelection;
 import view.AemetWeatherExtractor;
 import view.DataStorer;
@@ -10,7 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class FeederController {
-    public void control() {
+    public void control(String apiKey) {
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             @Override
@@ -19,12 +19,10 @@ public class FeederController {
                     AemetWeatherExtractor weatherExtractor = new AemetWeatherExtractor();
                     DataStorer dataStorer = new DataStorer();
                     WeathersGcTodaySelection selection = new WeathersGcTodaySelection();
-                    List<model.Weather> deserializedWeathers = weatherExtractor.getAemetWeathers();
-                    List<model.Weather> weathersToday = selection.getWeathersFromGcToday(deserializedWeathers); // variable fileName ???
-                    dataStorer.storeData(weathersToday);
-                } catch (IOException e) {
-                    /*String msg = "RunTimeException";
-                    throw new WeatherException("msg");*/
+                    List<model.Weather> deserializedWeathers = weatherExtractor.getAemetWeathers(apiKey);
+                    List<model.Weather> weathersGcToday = selection.getWeathersFromGcToday(deserializedWeathers);
+                    dataStorer.storeWeathersGcToday(weathersGcToday);
+                } catch (IOException ignored) {
                 }
                 System.out.println("ejecutado correctamente");
             }
