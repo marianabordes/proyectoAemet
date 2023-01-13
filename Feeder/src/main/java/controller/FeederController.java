@@ -2,7 +2,7 @@ package controller;
 
 import model.WeathersGcTodaySelection;
 import view.AemetWeatherExtractor;
-import view.DataStorer;
+import view.AemetWeathersStorer;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,11 +17,11 @@ public class FeederController {
             public void run() {
                 try {
                     AemetWeatherExtractor weatherExtractor = new AemetWeatherExtractor();
-                    DataStorer dataStorer = new DataStorer();
+                    AemetWeathersStorer aemetWeathersStorer = new AemetWeathersStorer();
                     WeathersGcTodaySelection selection = new WeathersGcTodaySelection();
                     List<model.Weather> deserializedWeathers = weatherExtractor.getAemetWeathers(apiKey);
                     List<model.Weather> weathersGcToday = selection.getWeathersFromGcToday(deserializedWeathers);
-                    dataStorer.storeWeathersGcToday(weathersGcToday);
+                    aemetWeathersStorer.storeWeathersGcToday(weathersGcToday);
                 } catch (IOException ignored) {
                 }
                 System.out.println("ejecutado correctamente");

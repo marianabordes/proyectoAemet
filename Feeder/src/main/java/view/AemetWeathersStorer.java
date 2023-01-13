@@ -8,7 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class DataStorer {
+public class AemetWeathersStorer {
     private String fileName = null;
 
     public void storeWeathersGcToday(List<Weather> weathersGcToday) throws IOException {

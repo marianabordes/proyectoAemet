@@ -23,8 +23,7 @@ public class DatamartProviderController {
                 try {
                     connection.connect();
                     tables.createTable();
-                    ArrayList<Weather> jsonsFromDatalake = datamartProvider.getWeathersFromDatalake();
-                    datamartProvider.setFilteredWeathersInDatamart(jsonsFromDatalake, tables, connection);
+                    datamartProvider.setFilteredWeathersInDatamart(tables, connection);
                 } catch (IOException | SQLException e) {
                     throw new RuntimeException(e);
                 }

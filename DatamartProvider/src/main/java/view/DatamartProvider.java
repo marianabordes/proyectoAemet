@@ -6,6 +6,7 @@ import model.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.sql.Array;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -14,8 +15,16 @@ import java.util.Scanner;
 
 public class DatamartProvider {
 
-    public ArrayList<Weather> getWeathersFromDatalake() throws FileNotFoundException {
-        WeatherDeserializer deserializer = new WeatherDeserializer();
+    public void setFilteredWeathersInDatamart(TableManager tableManager, DatamartConnection connection) throws SQLException, FileNotFoundException {
+        ArrayList<Weather> jsonsFromDatalake = getWeathersFromDatalake();
+        TemperatureFilter filter = new TemperatureFilter();
+        Weather highestTemp = filter.getHighestTemp(jsonsFromDatalake);
+        Weather lowestTemp = filter.getLowestTemp(jsonsFromDatalake);
+        tableManager.insertTempMax(highestTemp, connection);
+        tableManager.insertTempMin(lowestTemp, connection);
+    }
+    private ArrayList<Weather> getWeathersFromDatalake() throws FileNotFoundException {
+        Deserializer deserializer = new Deserializer();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
         String fileName = formatter.format(LocalDate.now()) + ".event";
         File file = new File(".\\datalake\\" + fileName);
@@ -27,13 +36,5 @@ public class DatamartProvider {
             jsonsInDatalake.add(dataJsonObject);
         }
         return deserializer.jsonDeserializer(jsonsInDatalake);
-    }
-
-    public void setFilteredWeathersInDatamart(ArrayList<Weather> jsonsFromDatalake, TableManager tableManager, DatamartConnection connection) throws SQLException {
-        TemperatureFilter filter = new TemperatureFilter();
-        Weather highestTemp = filter.getHighestTemp(jsonsFromDatalake);
-        Weather lowestTemp = filter.getLowestTemp(jsonsFromDatalake);
-        tableManager.insertTempMax(highestTemp, connection);
-        tableManager.insertTempMin(lowestTemp, connection);
     }
 }

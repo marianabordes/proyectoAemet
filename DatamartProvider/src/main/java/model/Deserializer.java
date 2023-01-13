@@ -6,7 +6,7 @@ import com.google.gson.JsonObject;
 
 import java.util.ArrayList;
 
-public class WeatherDeserializer {
+public class Deserializer {
     public ArrayList<Weather> jsonDeserializer(ArrayList<JsonObject> jsons) {
         ArrayList<Weather> jsonElements = new ArrayList<>();
         for (JsonElement json : jsons) {

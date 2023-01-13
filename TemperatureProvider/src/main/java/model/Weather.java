@@ -1,3 +1,5 @@
+package model;
+
 public class Weather {
     private String date;
     private String time;
@@ -29,7 +31,7 @@ public class Weather {
 
     @Override
     public String toString() {
-        return "Weather{" +
+        return "model.Weather{" +
                 "date='" + date + '\'' +
                 ", time='" + time + '\'' +
                 ", place='" + place + '\'' +

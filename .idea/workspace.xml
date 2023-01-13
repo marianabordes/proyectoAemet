@@ -4,33 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="DatamartProvider corrections, everything works perfectly">
-      <change afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/ApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/SelectMethodsDefiner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="b529df37-2d20-4202-a2a9-b689d7ab1585" name="Changes" comment="TemperatureProvider nad DatamartProvider corrections and code cleand">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/MainDM.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/MainDM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/controller/DatamartProviderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/DatamartConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/DatamartConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/TableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/TableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/TemperatureFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/TemperatureFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/Weather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/WeatherDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/WeatherDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/controller/DatamartProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/controller/DatamartProviderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/WeatherDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/model/Deserializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DatamartProvider/src/main/java/view/DatamartProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/DatamartProvider/src/main/java/view/DatamartProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/MainFD.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/MainFD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/controller/FeederController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/controller/FeederController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/model/Deserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/model/Deserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/model/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/model/Weather.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/model/WeatherException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/model/WeathersGcTodaySelection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/model/WeathersGcTodaySelection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/view/AemetWeatherExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/view/AemetWeatherExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/view/DataStorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/view/DataStorer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureProvider/src/main/java/DatamartReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Feeder/src/main/java/view/DataStorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Feeder/src/main/java/view/AemetWeathersStorer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureProvider/src/main/java/ApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/controller/ApiController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TemperatureProvider/src/main/java/MainTP.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/MainTP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureProvider/src/main/java/TemperatureProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TemperatureProvider/src/main/java/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureProvider/src/main/java/SelectMethodsDefiner.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/model/SelectMethodsDefiner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TemperatureProvider/src/main/java/Weather.java" beforeDir="false" afterPath="$PROJECT_DIR$/TemperatureProvider/src/main/java/model/Weather.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datalake/20230110.event" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/datalake/20230111.event" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/datalake/20230113.event" beforeDir="false" afterPath="$PROJECT_DIR$/datalake/20230113.event" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datalprueba.event" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/datamart.db" beforeDir="false" afterPath="$PROJECT_DIR$/datamart.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +92,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TemperatureProvider">
+  <component name="RunManager" selected="Application.DatamartProvider">
     <configuration name="DatamartProvider" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="MainDM" />
       <module name="DatamartProvider" />
@@ -261,7 +249,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673610459481</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="TemperatureProvider nad DatamartProvider corrections and code cleand">
+      <created>1673630917149</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673630917149</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,6 +295,7 @@
     <MESSAGE value="DatamartProvider correction + Feeder actualization (pending Feeder correcctions)" />
     <MESSAGE value="Feeder correction: works perfectly (pending: DatamartProvider corrections due to Feeder modifications)" />
     <MESSAGE value="DatamartProvider corrections, everything works perfectly" />
-    <option name="LAST_COMMIT_MESSAGE" value="DatamartProvider corrections, everything works perfectly" />
+    <MESSAGE value="TemperatureProvider nad DatamartProvider corrections and code cleand" />
+    <option name="LAST_COMMIT_MESSAGE" value="TemperatureProvider nad DatamartProvider corrections and code cleand" />
   </component>
 </project>

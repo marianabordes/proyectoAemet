@@ -17,10 +17,9 @@ public class AemetWeatherExtractor {
 
     public List<Weather> getAemetWeathers(String apiKey) throws IOException {
         String dataUrl = "https://opendata.aemet.es/opendata/api/observacion/convencional/todas";
-       // String apiKey = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtYXJpYW5hLmJvcmRlczEwMUBhbHUudWxwZ2MuZXMiLCJqdGkiOiIwYjE1YmU1OC0zNGQ2LTQxZGMtYmMwMS00OWI4NmU0ZjFmOTciLCJpc3MiOiJBRU1FVCIsImlhdCI6MTY3MjI0MzM3OSwidXNlcklkIjoiMGIxNWJlNTgtMzRkNi00MWRjLWJjMDEtNDliODZlNGYxZjk3Iiwicm9sZSI6IiJ9.IJ-zH2SJWP5xcOsjVWLJ9hQ15zhfuscrpXaaDf3qJFk";
         String datosUrl = getDataUrls(dataUrl, apiKey);
         String dataContent = getData(datosUrl);
-        return deserializeJson(dataContent); // returns deserialized weathers
+        return deserializeJson(dataContent);
     }
 
     private String getDataUrls(String dataUrl, String apiKey) throws IOException {
